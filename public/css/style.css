@@ -1,0 +1,23 @@
+* {
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: monospace;
+}
+
+ul {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background: #5c5cf0;
+    padding: 2em;
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    font-size: 2em;
+    text-decoration: none;
+}
