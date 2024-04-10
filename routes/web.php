@@ -30,3 +30,9 @@ Route::prefix('app')->group(function () {
     Route::get('/fornecedores', [App\Http\Controllers\FornecedoresController::class, 'fornecedores'])->name('app.fornecedores');
 
 });
+
+Route::fallback(function () {
+    echo 'A rota acessada não existe.<br>Clique para <a href="' . route('site.principal') . '"> Voltar a página principal</a>';
+});
+
+Route::get('teste/{p1}/{p2}', [App\Http\Controllers\TesteController::class, 'teste']);

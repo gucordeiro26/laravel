@@ -8,27 +8,27 @@
 </head>
 <body>
     
-<ul>
+    <ul>
         <li>
-            <a href="{{ route('site/principal') }}">Principal</a>
+            <a href="{{ route('site.principal') }}">Principal</a>
         </li>
         <li>
-            <a href="{{ route('site/sobrenos') }}">Sobre Nós</a>
+            <a href="{{ route('site.sobrenos') }}">Sobre Nós</a>
         </li>
         <li>
-            <a href="{{ route('site/contato') }}">Contato</a>
+            <a href="{{ route('site.contato') }}">Contato</a>
         </li>
         <li>
-            <a href="{{ route('app/clientes') }}">Clientes</a>
+            <a href="{{ route('site.login') }}">Login</a>
         </li>
         <li>
-            <a href="{{ route('app/produtos') }}">Produtos</a>
+            <a href="{{ route('app.clientes') }}">Clientes</a>
         </li>
         <li>
-            <a href="{{ route('app/fornecedores') }}">Fornecedores</a>
+            <a href="{{ route('app.produtos') }}">Produtos</a>
         </li>
         <li>
-            <a href="{{ route('site/login') }}">Login</a>
+            <a href="{{ route('app.fornecedores') }}">Fornecedores</a>
         </li>
     </ul>
 
