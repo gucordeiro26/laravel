@@ -10,33 +10,10 @@
         <div class="row d-flex justify-content-center align-items-center">
             <div class="col-6 border">
 
-                <form action="{{ route('site.contato') }}" method="GET">
-                    <div class="mb-3">
-                        <label class="form-label" for="nome">Nome Completo</label>
-                        <input class="form-control" type="text" name="nome" id="nome">
-                    </div>
-
-                    <div class="mb-3">
-                        <label class="form-label" for="email">E-mail</label>
-                        <input class="form-control" type="email" name="email" id="email">
-                    </div>
-
-                    <div class="mb-3">
-                        <label class="form-label" for="mensagem">Mensagem</label>
-                        <input class="form-control" type="text" name="mensagem" id="mensagem">
-                    </div>
-
-                    <div class="mb-3">
-                        <select class="form-select" name="motivo" id="motivo">
-                            <option selected>Qual o motivo do contato?</option>
-                            <option value="1">Reclamação</option>
-                            <option value="2">Dúvida</option>
-                            <option value="3">Elogio</option>
-                        </select>
-                    </div>
-
-                    <button class="btn btn-secondary mb-3" type="submit">Enviar</button>
-                </form>
+                @component('site.layouts._components.form_contato', ['dark' => 'bg-light'])
+                    <p>A nossa equipe analisará o caso e entraremos em contato!</p>
+                    <p>Tempo de resposta de 48 horas!</p>
+                @endcomponent
 
             </div>
         </div>
