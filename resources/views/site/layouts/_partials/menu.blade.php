@@ -20,4 +20,12 @@
     <li>
         <a href="{{ route('app.fornecedores') }}">Fornecedores</a>
     </li>
+
+    <li>
+        <a href="{{ route('intranet.Principal') }}">Principal</a>
+</li>
+
+    <li>
+        <a href="{{ route('intranet.sac') }}">Sac</a>
+    </li>
 </ul>

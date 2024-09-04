@@ -22,6 +22,10 @@ Route::post('/contato', [App\Http\Controllers\ContatoController::class, 'salvar'
 
 Route::get('/login', [App\Http\Controllers\LoginController::class, 'login'])->name('site.login');
 
+Route::get('/intranet', [App\Http\Controllers\PrincipalController2::class, 'Principal'])->name('intranet.Principal');
+
+Route::get('/intranetcSac', [App\Http\Controllers\SacControllers::class, 'sac'])->name('intranet.sac');
+
 Route::prefix('app')->group(function () {
 
     Route::get('/clientes', [App\Http\Controllers\ClientesController::class, 'clientes'])->name('app.clientes');
