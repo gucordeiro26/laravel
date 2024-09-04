@@ -18,6 +18,11 @@
     </div>
 
     <div class="mb-3">
+        <label class="form-label" for="telefone">Telefone</label>
+        <input class="form-control" type="text" name="telefone" id="telefone">
+    </div>
+
+    <div class="mb-3">
         <select class="form-select" name="motivo" id="motivo">
             <option selected>Qual o motivo do contato?</option>
             <option value="1">Reclamação</option>
@@ -28,3 +33,5 @@
 
     <button class="btn btn-secondary mb-3" type="submit">Enviar</button>
 </form>
+
+{{ print_r($errors) }}

@@ -14,11 +14,11 @@ return new class extends Migration
         Schema::create('contato_models', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('nome', 50);
-            $table->string('telefone', 20);
-            $table->string('email', 80);
-            $table->integer('motivo_contato');
-            $table->text('mensagem');
+            $table->string('nome', 50)->nullable();
+            $table->string('telefone', 20)->nullable();
+            $table->string('email', 80)->nullable();
+            $table->integer('motivo_contato')->nullable();
+            $table->text('mensagem')->nullable();
         });
     }
 
