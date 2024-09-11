@@ -34,4 +34,12 @@
     <button class="btn btn-secondary mb-3" type="submit">Enviar</button>
 </form>
 
-{{ print_r($errors) }}
+@if ($errors->any())
+    <div class="alert alert-danger mt-3">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $errors }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
