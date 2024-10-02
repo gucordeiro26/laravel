@@ -9,23 +9,13 @@ class ContatoController extends Controller
 {
     public function contato(Request $request)
     {
-        $contato = new ContatoModel();
-
-        $contato->create($request->all());
-        
-        $contato->nome = $request->input('nome');
-        $contato->email = $request->input('email');
-        $contato->mensagem = $request->input('mensagem');
-        $contato->telefone = $request->input('telefone');
-        $contato->motivo_contato = $request->input('motivo_contato');
-
         return View('site.contato');
     }
 
     public function salvar(Request $request)
     {
         $regras = [
-            'nome' => 'required|min:3|max:100|unique:contatos',
+            'nome' => 'required|min:3|max:40',
             'email' => 'email',
             'telefone' => 'required|min:9|max:20',
             'motivo_contato' => 'required',
@@ -44,7 +34,7 @@ class ContatoController extends Controller
         ];
 
         $request->validate($regras, $feedback);
-
+        
         ContatoModel::create($request->all());
         return redirect()->route('site.principal');
     }

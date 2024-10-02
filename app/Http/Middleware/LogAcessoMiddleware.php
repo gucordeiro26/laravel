@@ -15,6 +15,9 @@ class LogAcessoMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        return Response('Chegamos no middleware e finalizamos aqui!'); redirect('site.contato');
+        /* return Response('Chegamos no middleware e finalizamos aqui!'); 
+        redirect('site.contato'); */
+
+        return $next($request);
     }
 }
