@@ -18,6 +18,6 @@
         <a href="{{ route('app.produtos') }}">Produtos</a>
     </li>
     <li>
-        <a href="{{ route('app.fornecedores') }}">Fornecedores</a>
+        <a href="{{ route('app.fornecedor') }}">Fornecedores</a>
     </li>
 </ul>
