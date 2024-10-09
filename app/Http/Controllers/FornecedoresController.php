@@ -14,13 +14,27 @@ class FornecedoresController extends Controller
 
     public function listar(Request $request)
     {
-        $fornecedores = Fornecedor::where('nome', 'like', '%'.$request->input('nome').'%')
-                                    ->where('site', 'like', '%'.$request->input('site').'%')
-                                    ->where('uf', 'like', '%'.$request->input('uf').'%')
-                                    ->where('email', 'like', '%'.$request->input('email').'%')
-                                    ->cursorPaginate(10);
+        $fornecedores = Fornecedor::query();
 
-        return View('site.fornecedor.listar', ['pagina' => 'Página de ', 'fornecedores' => $fornecedores]);
+        if ($request->filled('nome')) {
+            $fornecedores->where('nome', 'like', '%' . $request->input('nome') . '%');
+        }
+
+        if ($request->filled('site')) {
+            $fornecedores->where('site', 'like', '%' . $request->input('site') . '%');
+        }
+
+        if ($request->filled('uf')) {
+            $fornecedores->where('uf', 'like', '%' . $request->input('uf') . '%');
+        }
+
+        if ($request->filled('email')) {
+            $fornecedores->where('email', 'like', '%' . $request->input('email') . '%');
+        }
+
+        $fornecedores = $fornecedores->cursorPaginate(10);
+
+        return view('site.fornecedor.listar', ['pagina' => 'Página de ', 'fornecedores' => $fornecedores]);
     }
 
     public function adicionar(Request $request)
@@ -77,4 +91,19 @@ class FornecedoresController extends Controller
 
         return View('site.fornecedor.adicionar', ['pagina' => 'Página de ', 'fornecedor' => $fornecedor]);
     }
+
+    public function excluir($id)
+{
+    $fornecedor = Fornecedor::find($id);
+
+    if ($fornecedor) {
+        $fornecedor->delete();
+        $msg = 'Fornecedor excluído com sucesso!';
+    } else {
+        $msg = 'Fornecedor não encontrado!';
+    }
+
+    return redirect()->route('app.fornecedor')->with('msg', $msg);
+}
+
 }

@@ -10,8 +10,8 @@
         {{-- MENU --}}
         <div class="row d-flex justify-content-center mb-4">
             <div class="col-12 col-lg-6 text-center">
-                <a class="btn btn-outline-primary btn-lg me-3" href="{{ route('app.fornecedor.adicionar') }}">Cadastrar Fornecedor</a>
-                <a class="btn btn-outline-secondary btn-lg" href="{{ route('app.fornecedor') }}">Pesquisar Fornecedores</a>
+                <a class="btn btn-outline-dark btn-lg me-3" href="{{ route('app.fornecedor.adicionar') }}">Cadastrar Fornecedor</a>
+                <a class="btn btn-outline-secondary btn-lg" href="{{ route('site.principal') }}">Voltar Menu</a>
             </div>
         </div>
 

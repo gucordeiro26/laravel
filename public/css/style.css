@@ -27,7 +27,7 @@ a {
 body {
     font-family: 'Poppins', sans-serif;
     font-size: 16px;
-    background-color: #f8f9fa;
+    background-color: #cccccc;
 }
 
 /* Títulos e Botões */
@@ -110,3 +110,39 @@ small.text-danger {
     color: #721c24;
     border: 1px solid #f5c6cb;
 }
+
+.content-adc {
+    height: 100vh;
+}
+
+.content-adc-menu {
+    height: 10vh;
+}
+
+.content-adc-form {
+    height: 80vh;
+}
+
+.btn-outline-secondary {
+    border-color: #947ac5;
+    color: #947ac5;
+}
+
+.btn-outline-secondary:hover {
+    background-color: #947ac5;
+    color: white;
+    border-color: #947ac5;
+}
+
+.btn-warning {
+    background-color: #003366; /* Azul escuro */
+    color: white; /* Texto branco */
+    border-color: #003366; /* Azul escuro para a borda */
+}
+
+.btn-warning:hover {
+    background-color: #002244; /* Tom mais escuro de azul ao passar o mouse */
+    color: white; /* Texto branco */
+    border-color: #002244; /* Mantém a borda azul escuro mais escuro */
+}
+

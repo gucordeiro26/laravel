@@ -8,50 +8,51 @@
     <div class="container-fluid">
         
         {{-- MENU --}}
-        <div class="row d-flex justify-content-center mb-3">
-            <div class="col-12 col-lg-6">
-                <a type="submit" class="btn btn-primary" href={{ route('app.fornecedor.adicionar') }}>Cadastrar</a>
-                <a type="submit" class="btn btn-primary" href={{ route('app.fornecedor') }}>Pesquisar</a>
+        <div class="row d-flex justify-content-center mb-4 mt-4">
+            <div class="col-12 col-lg-6 text-center">
+                <a class="btn btn-outline-dark btn-lg me-3" href="{{ route('app.fornecedor.adicionar') }}">Cadastrar Fornecedor</a>
+                <a class="btn btn-outline-secondary btn-lg" href="{{ route('app.fornecedor') }}">Pesquisar Fornecedores</a>
             </div>
         </div>
 
         {{-- FORMULÁRIO --}}
         <div class="row d-flex justify-content-center">
-            <div class="col-12 col-lg-6">
-                <div class="card shadow">
-                    <div class="card-header">
+            <div class="col-12 col-lg-9">
+                <div class="row card shadow">
+                    <div class="col-12 card-header">
                         Fornecedor
                     </div>
-                    <div class="card-body">
+                    <div class="col-12 card-body">
                         
-                        <table class="w-100">
-                            <thead>
-                                <tr>
-                                    <th>Nome</th>
-                                    <th>Site</th>
-                                    <th>UF</th>
-                                    <th>E-mail</th>
-                                    <th>Ações</th>
+                        {{-- Tabela Bootstrap --}}
+                        <table class="table table-striped table-hover">
+                            <thead class="row d-flex justify-content-center align-items-center">
+                                <tr class="col-12 d-flex justify-content-center align-items-center text-center">
+                                    <th class="col-3">Nome</th>
+                                    <th class="col-3">Site</th>
+                                    <th class="col-1">UF</th>
+                                    <th class="col-3">E-mail</th>
+                                    <th class="col-2">Ações</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody class="row d-flex justify-content-center align-items-center">
                                 @foreach($fornecedores as $fornecedor)
-                                    <tr>
-                                        <td>{{ $fornecedor->nome }}</td>
-                                        <td>{{ $fornecedor->site }}</td>
-                                        <td>{{ $fornecedor->uf }}</td>
-                                        <td>{{ $fornecedor->email }}</td>
-                                        <td>
-                                            <a href="{{ route('app.fornecedor.editar', $fornecedor->id) }}">Editar</a>
-                                            <a href="{{ route('app.fornecedor.excluir', $fornecedor->id) }}">Excluir</a>
+                                    <tr class="col-12 d-flex justify-content-center align-items-center text-center">
+                                        <td class="col-3">{{ $fornecedor->nome }}</td>
+                                        <td class="col-3">{{ $fornecedor->site }}</td>
+                                        <td class="col-1">{{ $fornecedor->uf }}</td>
+                                        <td class="col-3">{{ $fornecedor->email }}</td>
+                                        <td class="col-2 d-flex justify-content-center align-items-center">
+                                            <a href="{{ route('app.fornecedor.editar', $fornecedor->id) }}" class="btn btn-md btn-warning">Editar</a>
+                                            <a href="{{ route('app.fornecedor.excluir', $fornecedor->id) }}" class="btn btn-md btn-danger">Excluir</a>
                                         </td>
                                     </tr>
                                 @endforeach
-                                    <tr>
-                                        <td colspan="5">
-                                            {{ $fornecedores->links() }}
-                                        </td>
-                                    </tr>
+                                <tr>
+                                    <td colspan="5">
+                                        {{ $fornecedores->links() }}
+                                    </td>
+                                </tr>
                             </tbody>
                         </table>
                         {{ $fornecedores->links() }}
