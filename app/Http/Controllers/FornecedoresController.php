@@ -93,17 +93,17 @@ class FornecedoresController extends Controller
     }
 
     public function excluir($id)
-{
-    $fornecedor = Fornecedor::find($id);
+    {
+        $fornecedor = Fornecedor::find($id);
 
-    if ($fornecedor) {
-        $fornecedor->delete();
-        $msg = 'Fornecedor excluído com sucesso!';
-    } else {
-        $msg = 'Fornecedor não encontrado!';
+        if ($fornecedor) {
+            $fornecedor->delete();
+            $msg = 'Fornecedor excluído com sucesso!';
+        } else {
+            $msg = 'Fornecedor não encontrado!';
+        }
+
+        return redirect()->route('app.fornecedor.listar')->with('msg', $msg);
     }
-
-    return redirect()->route('app.fornecedor.listar')->with('msg', $msg);
-}
 
 }
