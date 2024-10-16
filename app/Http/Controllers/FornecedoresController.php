@@ -103,7 +103,7 @@ class FornecedoresController extends Controller
         $msg = 'Fornecedor não encontrado!';
     }
 
-    return redirect()->route('app.fornecedor')->with('msg', $msg);
+    return redirect()->route('app.fornecedor.listar')->with('msg', $msg);
 }
 
 }
